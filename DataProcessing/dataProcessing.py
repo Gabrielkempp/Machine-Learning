@@ -75,13 +75,15 @@ maxFormat=(f"A maior renda: ${X_credit[:,0].max():,.2f} anualmente.\n"
       f"A maior idade: {X_credit[:,1].max():.0f} anos.\n"
       f"A maior divida: ${X_credit[:,2].max():.2f}")
 
-print(X_credit[:,0].min(), X_credit[:,1].min(), X_credit[:,2].min())
-print(X_credit[:,0].max(), X_credit[:,1].max(), X_credit[:,2].max())
+# print(X_credit[:,0].min(), X_credit[:,1].min(), X_credit[:,2].min())
+# print(X_credit[:,0].max(), X_credit[:,1].max(), X_credit[:,2].max())
 
 '''
-A padronização (Standardisation) e a normalização (normalization) são usadas em casos onde os valores são muito 
-distantes (EX: idade 18 e divida 10.000) pois o algoritmo pode acabar se confundindo e achando que um desses valores
-é mais importante que outro.
+A padronização (Standardisation) e a normalização (normalization) 
+são usadas em casos onde os valores são muito distantes 
+(EX: idade 18 e divida 10.000) pois o algoritmo pode acabar 
+se confundindo e achando que um desses valores é mais 
+importante que outro.
 
 Padronização é indicada quando há outliers na tabela, por exemplo idades negativas.
 '''
@@ -89,6 +91,9 @@ Padronização é indicada quando há outliers na tabela, por exemplo idades neg
 from sklearn.preprocessing import StandardScaler
 scaler_credit = StandardScaler()
 X_credit = scaler_credit.fit_transform(X_credit)
-print(X_credit[:,0].min(), X_credit[:,1].min(), X_credit[:,2].min())
-print(X_credit[:,0].max(), X_credit[:,1].max(), X_credit[:,2].max())
-# Valores Escalonados | Ultima etapa do preprocessamento de dados  
+# print(X_credit[:,0].min(), X_credit[:,1].min(), X_credit[:,2].min())
+# print(X_credit[:,0].max(), X_credit[:,1].max(), X_credit[:,2].max())
+# Valores Escalonados | Ultima etapa do preprocessamento de dados
+
+# Salvando o DataFrame processado em um novo arquivo CSV
+base_credit.to_csv("Data/credit_data_processed.csv", index=False)
