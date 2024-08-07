@@ -120,4 +120,11 @@ X_census = onehotencoder_census.fit_transform(X_census).toarray()
 #print(X_census[0])
 
 # Mostra o tamanho (Linhas x Colunas)
-print(X_census.shape)
+#print(X_census.shape)
+
+# Escalonamento dos valores --------------------------------------------------------------------------------------------
+from sklearn.preprocessing import StandardScaler
+scaler_census = StandardScaler()
+X_census = scaler_census.fit_transform(X_census)
+
+print(X_census[0])
