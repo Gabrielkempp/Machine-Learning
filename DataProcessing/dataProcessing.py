@@ -97,3 +97,21 @@ X_credit = scaler_credit.fit_transform(X_credit)
 
 # Salvando o DataFrame processado em um novo arquivo CSV
 base_credit.to_csv("Data/credit_data_processed.csv", index=False)
+
+# Divisão das bases em treinamento e teste -----------------------------------------------------------------------------
+from sklearn.model_selection import train_test_split
+
+
+# X_credit = Atributos previsores
+# Y_credit = Classe
+# test_sise > tamanho da base de dados de teste
+X_credit_treinamento, X_credit_teste, Y_credit_treinamento, Y_credit_teste = train_test_split(X_credit, Y_credit, test_size = 0.25, random_state = 0)
+
+'''print(X_credit_treinamento.shape)# 3 colunas Income - age - loan
+print(Y_credit_treinamento.shape)# 1 coluna (classe 0 = pago | classe 1 = não pago)
+print((X_credit_teste.shape,Y_credit_teste.shape))'''
+
+# Salvar as variaveis --------------------------------------------------------------------------------------------------
+import pickle
+with open('credit.pkl', mode = 'wb') as f: # 'credit.pkl'-> nome do arquivo que sera criado, 'wb'-> w = write,, vamos escrever a variavel
+      pickle.dump([X_credit_treinamento,Y_credit_treinamento, X_credit_teste, Y_credit_teste],f)
