@@ -1,5 +1,5 @@
 from sklearn.naive_bayes import GaussianNB
-from Risco import X_risco_credito, Y_risco_credito
+from data_processing import X_risco_credito, Y_risco_credito
 
 naive_risco_credito = GaussianNB()
 naive_risco_credito.fit(X_risco_credito, Y_risco_credito) # quando for exegutado sera feito o treiamento do algoritmo
