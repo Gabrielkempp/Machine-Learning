@@ -14,15 +14,12 @@ arvore_risco_credito = DecisionTreeClassifier(criterion='entropy')
 # O algoritmo vai ser treinado e a arvore de decisao gerada
 arvore_risco_credito.fit(X_risco_credito, Y_risco_credito)
 
-
 # Exibe o ganho de informação de cada item previsor
 print(arvore_risco_credito.feature_importances_)
 
 # Lista criada para nomear os previsores da arvore de decisão
 previsores = ['historico','divida', 'garantias', 'renda']
-
 figura, eixos = plt.subplots(nrows=1, ncols=1, figsize=(10,10))
-
 # Cria a estrutura da arvore de decisão e exibe
 tree.plot_tree(arvore_risco_credito, feature_names= previsores, class_names=arvore_risco_credito.classes_, filled=True) # class_names -> alto, baixo, moderado
 plt.show()
