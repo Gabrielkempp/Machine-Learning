@@ -1,7 +1,9 @@
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score, classification_report
 from sklearn import tree
 import matplotlib.pyplot as plt
 import pickle
+from yellowbrick.classifier import ConfusionMatrix
 
 # Adiciona os dados as respectivas variaveis (Ja com Label encoder)
 with open('credit.pkl', 'rb') as f:
@@ -18,19 +20,16 @@ arvore_credit.fit(X_credit_treinamento, Y_credit_treinamento)
 previsoes = arvore_credit.predict(X_credit_teste)
 # print(previsoes)
 
-# Importa e exibe a porcentagem de acerto (acurácia) do modelo treinado
-from sklearn.metrics import accuracy_score, classification_report
+# Exibe a porcentagem de acerto (acurácia) do modelo treinado
 print(accuracy_score(Y_credit_teste, previsoes))
 print(classification_report(Y_credit_teste, previsoes))
 
-from yellowbrick.classifier import ConfusionMatrix
-import matplotlib.pyplot as plt
+# Matriz de confusão
 cm = ConfusionMatrix(arvore_credit)
 cm.fit(X_credit_treinamento, Y_credit_treinamento)
 cm.score(X_credit_teste, Y_credit_teste)
 #plt.show()
 
-from sklearn import tree
 previsores = ['income', 'age', 'loan']
 fig, axes = plt.subplots(nrows=1, ncols=1, figsize=(20,20))
 # Cria a estrutura da arvore de decisão e exibe
