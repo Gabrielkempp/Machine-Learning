@@ -5,7 +5,7 @@ from yellowbrick.classifier import ConfusionMatrix
 import matplotlib.pyplot as plt
 
 # Abre o arquivo 'credit.pkl' e carrega os dados serializados usando o pickle.
-with open('credit.pkl', 'rb') as f:
+with open('Data/credit.pkl', 'rb') as f:
     X_credit_treinamento, Y_credit_treinamento, X_credit_teste, Y_credit_teste = pickle.load(f)
 
 # Exibe as dimensões dos conjuntos de dados de treinamento e teste.

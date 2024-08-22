@@ -6,7 +6,7 @@ import pickle
 from yellowbrick.classifier import ConfusionMatrix
 
 # Adiciona os dados as respectivas variaveis (Ja com Label encoder)
-with open('credit.pkl', 'rb') as f:
+with open('Data/credit.pkl', 'rb') as f:
     X_credit_treinamento, Y_credit_treinamento, X_credit_teste, Y_credit_teste = pickle.load(f)
 
 # Criando um classificador de árvore de decisão usando a métrica de entropia

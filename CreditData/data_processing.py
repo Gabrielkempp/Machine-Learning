@@ -113,5 +113,5 @@ print((X_credit_teste.shape,Y_credit_teste.shape))'''
 
 # Salvar as variaveis --------------------------------------------------------------------------------------------------
 import pickle
-with open('credit.pkl', mode = 'wb') as f: # 'credit.pkl'-> nome do arquivo que sera criado, 'wb'-> w = write,, vamos escrever a variavel
+with open('Data/credit.pkl', mode ='wb') as f: # 'credit.pkl'-> nome do arquivo que sera criado, 'wb'-> w = write,, vamos escrever a variavel
       pickle.dump([X_credit_treinamento,Y_credit_treinamento, X_credit_teste, Y_credit_teste],f)

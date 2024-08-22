@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 
 # Variavel recebe o arquivo csv
-base_risco_credito = pd.read_csv('risco_credito.csv')
+base_risco_credito = pd.read_csv('Data/risco_credito.csv')
 
 #print(base_risco_credito)
 
@@ -38,6 +38,6 @@ X_risco_credito[:,3] = label_encoder_renda.fit_transform(X_risco_credito[:,3])
 
 # Criando o arquivo
 import pickle
-with open('risco_credito.pkl', 'wb') as f:
+with open('Data/risco_credito.pkl', 'wb') as f:
     pickle.dump([X_risco_credito,Y_risco_credito], f)
 

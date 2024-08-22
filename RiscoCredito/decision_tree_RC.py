@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import pickle
 
 # Adiciona os dados as respectivas variaveis (Ja com Label encoder)
-with open("risco_credito.pkl",'rb') as f:
+with open("Data/risco_credito.pkl", 'rb') as f:
     X_risco_credito, Y_risco_credito = pickle.load(f)
 
 # Criando um classificador de árvore de decisão usando a métrica de entropia
