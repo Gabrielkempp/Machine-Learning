@@ -4,7 +4,7 @@ from yellowbrick.classifier import ConfusionMatrix
 import matplotlib.pyplot as plt
 import pickle
 
-with open('census.pkl', 'rb') as f:
+with open('Data/census.pkl', 'rb') as f:
     X_census_treinamento,Y_census_treinamento, X_census_teste, Y_census_teste = pickle.load(f)
 
 # Define a quantidade de arvores que serão usadas

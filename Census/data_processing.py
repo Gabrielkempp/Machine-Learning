@@ -143,5 +143,5 @@ print((X_census_teste.shape,Y_census_teste.shape))'''
 
 # Salvar as variaveis --------------------------------------------------------------------------------------------------
 import pickle
-with open('census.pkl', mode = 'wb') as f:
+with open('Data/census.pkl', mode ='wb') as f:
     pickle.dump([X_census_treinamento,Y_census_treinamento, X_census_teste, Y_census_teste],f)

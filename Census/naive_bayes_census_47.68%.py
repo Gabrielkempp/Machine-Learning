@@ -5,7 +5,7 @@ from yellowbrick.classifier import ConfusionMatrix
 import matplotlib.pyplot as plt
 
 # Abre o aquivo 'census.pkl' e carrega os dados atribuindo à variaveis
-with open('census.pkl', 'rb') as f:
+with open('Data/census.pkl', 'rb') as f:
     X_census_treinamento,Y_census_treinamento, X_census_teste, Y_census_teste = pickle.load(f)
 
 # Exibe as dimensões dos dados de treinamento e teste.

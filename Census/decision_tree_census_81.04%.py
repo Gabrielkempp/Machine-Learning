@@ -5,7 +5,7 @@ from sklearn.metrics import accuracy_score, classification_report
 from yellowbrick.classifier import ConfusionMatrix
 
 # Carregando as variaveis salvas
-with open('census.pkl', 'rb') as f:
+with open('Data/census.pkl', 'rb') as f:
     X_census_treinamento, Y_census_treinamento, X_census_teste, Y_census_teste = pickle.load(f)
 
 # Define a arvore de decisão e o random state para 0, isso exibe o mesmo resultado sempre
